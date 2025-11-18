@@ -1,0 +1,27 @@
+<section class="navbar-section">
+      <div class="navbar-logo">
+        <img src="/images/logo.png" alt="Logo de EspaPelis" />
+      </div>
+      <div class="navbar-title">
+          <span>EspaPelis</span>
+          <span>Tu coleccion Personal</span>
+      </div>
+      <div class="navbar-menu">
+        <a href="/"><i class="fa-solid fa-house"></i>Inicio</a>
+        <!--<a href="/collection"><i class="fa-solid fa-film"></i>Mi Colección</a>-->
+        <a href="/contact"><i class="fa-solid fa-circle-info"></i>Soporte</a>
+      </div>
+        <div class="session">
+          <div class="user-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <% if (typeof username !== 'undefined' && username) { %>
+            <span id="username"><%= username %></span>
+            <button id="logout-btn">Cerrar sesión</button>
+          <% } else { %>
+            <a href="/signin">Iniciar sesión</a>
+          <% } %>
+
+        </div>
+      </div>
+    </section>

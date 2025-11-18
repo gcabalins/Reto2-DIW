@@ -1,0 +1,63 @@
+[
+  {
+    "title": "El Señor de los Anillos: La Comunidad del Anillo",
+    "year": 2001,
+    "category": "Fantasía",
+    "director": "Peter Jackson",
+    "description": "Un joven hobbit inicia un viaje épico para destruir un anillo poderoso.",
+    "format": "Blu-ray",
+    "state": "Nuevo",
+    "image": "https://es.web.img2.acsta.net/c_310_420/medias/nmedia/18/89/67/45/20061512.jpg"
+  },
+  {
+    "title": "Interstellar",
+    "year": 2014,
+    "category": "Ciencia Ficción",
+    "director": "Christopher Nolan",
+    "description": "Un grupo de astronautas viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad.",
+    "format": "4K UHD",
+    "state": "Bueno",
+    "image": "https://www.originalfilmart.com/cdn/shop/products/interstellar_2014_advance_original_film_art_682852f2-23f6-46de-a1db-4029d5b6f0b4_5000x.jpg?v=1574284010"
+  },
+  {
+    "title": "Gladiator",
+    "year": 2000,
+    "category": "Acción / Drama",
+    "director": "Ridley Scott",
+    "description": "Un general romano busca venganza tras la traición del emperador.",
+    "format": "DVD",
+    "state": "Malo",
+    "image": "https://m.media-amazon.com/images/I/91sdz07c9FL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+  "title": "Inception",
+  "year": 2010,
+  "category": "Ciencia Ficción",
+  "director": "Christopher Nolan",
+  "description": "Un ladrón especializado en infiltrarse en los sueños debe realizar la misión más compleja: implantar una idea.",
+  "format": "Blu-ray",
+  "state": "Nuevo",
+  "image": "https://www.mubis.es/media/covers/1029/1006/origen-inception-portada-original.jpg"
+},
+{
+  "title": "Matrix",
+  "year": 1999,
+  "category": "Acción / Sci-Fi",
+  "director": "The Wachowskis",
+  "description": "Un hacker descubre la verdad oculta tras su realidad y se une a una rebelión contra las máquinas.",
+  "format": "DVD",
+  "state": "Malo",
+  "image": "https://pics.filmaffinity.com/Matrix-155050517-large.jpg"
+},
+{
+  "title": "Pulp Fiction",
+  "year": 1994,
+  "category": "Crimen / Drama",
+  "director": "Quentin Tarantino",
+  "description": "Historias entrelazadas de crimen, humor negro y violencia en Los Ángeles.",
+  "format": "Blu-ray",
+  "state": "Nuevo",
+  "image": "https://www.tuposter.com/pub/media/catalog/product/cache/71d04d62b2100522587d43c930e8a36b/f/i/file_41_67.jpg"
+}
+
+]

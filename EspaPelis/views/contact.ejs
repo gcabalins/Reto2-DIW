@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel='stylesheet' href='/stylesheets/navbar.css' />
+  <link rel='stylesheet' href='/stylesheets/footer.css' />
+  <link rel='stylesheet' href='/stylesheets/contact.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Centro de Soporte</title>
+
+
+</head>
+
+<body>
+  <%- include('partials/navbar') %>
+    <main class="contact-main">
+      <div class="contact-container">
+        <div class="contact-header">
+
+          <div class="contact-logo">
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+          <h1>Centro de Soporte</h1>
+          <p>¿Necesitas ayuda? Estamos aquí para asistirte.<br> Envíanos un mensaje y te responderemos lo antes posible.</p>
+        </div>
+        <div class="contact-info">
+          <div class="info-items">
+            <div class="info-item first">
+              <div class="contact-icon">
+              <span><i class="fa-regular fa-envelope"></i></span>
+              </div>
+              <h2>Contacto Directo</h2>
+              <p>Escribenos directamente a:</p>
+              <a href="mailto:jWc4o@example.com">jWc4o@example.com</a>
+            </div>
+            <div class="info-item second">
+              <div class="contact-icon">
+              <span><i class="fa-regular fa-comment"></i></span>
+              </div>
+              <p>Respondemos en un plazo máximo de 24-48 horas durante días laborables.</p>
+            </div>
+            <div class="info-item third">
+              <div class="contact-icon">
+              <span><i class="fa-solid fa-book-open"></i></span>
+              </div>
+              <h2>Preguntas Frecuentes</h2>
+              <ul>
+                <li> Cómo añadir películas</li>
+                <li> Gestión de formatos</li>
+                <li> Control de estado de copias</li>
+                <li> Organizar tu colección</li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="contact-form">
+            <div class="contact-form-body">
+            <h2>Envíanos un Mensaje</h2>
+            <h3>Completa el formulario y nos pondremos en contacto contigo</h3>
+          </div>
+          <div class="contact-form-container">
+            <form>
+              <label for="name">Nombre Completo*</label>
+              <input type="text" name="name" placeholder="Nombre" required>
+              <label for="email">Correo Electrónico*</label>
+              <input type="email" name="email" placeholder="Correo" required>
+              <label for="message">Mensaje*</label>
+              <textarea name="message" placeholder="Mensaje" required></textarea>
+              <button type="submit"><i class="fa-solid fa-paper-plane"></i>Enviar</button>
+            </form>
+            <hr>
+            <h4>Información Adicional</h4>
+            <p>Nuestro equipo de soporte está comprometido en ayudarte a aprovechar al máximo EspaPelis. Ya sea que
+              tengas preguntas sobre funcionalidades, necesites asistencia técnica o quieras sugerir mejoras, estamos
+              aquí para escucharte.</p>
+          </div>
+        </div>
+
+        </div>
+
+
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+
+</html>

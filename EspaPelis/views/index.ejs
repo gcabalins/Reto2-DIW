@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/index.css' />
+  <link rel='stylesheet' href='/stylesheets/navbar.css' />
+  <link rel='stylesheet' href='/stylesheets/footer.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<script src="/javascripts/movie-cards.js"></script>
+<script src="/javascripts/logout.js"></script>
+
+
+<body>
+  <main id="content">
+    <%- include('partials/navbar') %>
+      <section class="welcome-section">
+        <div class="welcome-body">
+          <div class="welcome-subtitle">
+            <span class="welcome-subtitle">Gestión de Colecciones</span>
+          </div>
+          <h1>Tu Colección de Películas<br><strong class="highlight">Organizada y Accesible</strong></h1>
+          <p>Gestiona tu colección personal de películas en formato físico. <br>Mantén un registro detallado de tus
+            DVDs, Blu-rays y más.</p>
+          <div class="welcome-buttons">
+            <a href="/collection" class="btn-primary"><i class="fa-solid fa-film"></i>Ver Mi Colección</a>
+            <a href="/contact" class="btn-secondary">¿Necesitas Ayuda?</a>
+
+          </div>
+        </div>
+      </section>
+      <section class="collection">
+        <div class="latest-collection">
+          <p><i class="fa-solid fa-bolt-lightning"></i>Coleciones Recientes</p>
+          <h1>Últimas Películas Añadidas</h1>
+        </div>
+        <div class="collection-body">
+
+        </div>
+      </section>
+  </main>
+  <%- include('partials/footer') %>
+
+
+
+
+</body>
+
+</html>
