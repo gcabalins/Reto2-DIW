@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto - <%= item.titulo %> </title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/item.css">
+</head>
+<body>
+    <%- include('partials/main-menu')  %> 
+    <div class="container">
+        <div class="product-grid">
+            <div class="image-section">
+                <div class="main-image">
+                    <img src="<%= item.imagen %> " alt="Imagen principal">
+                </div>
+                <div class="thumbnail-grid">
+                    <div class="thumbnail">
+                        <img src="https://placehold.co/100x100" alt="Miniatura 1">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://placehold.co/100x100" alt="Miniatura 2">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://placehold.co/100x100" alt="Miniatura 3">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://placehold.co/100x100" alt="Miniatura 4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h1><%= item.titulo %> </h1>
+                <div class="price"><%= item.precio %>€</div>
+                <div class="categories">
+                    <% item.categoria.forEach(cat => { %>
+                        <span class="category"><%=cat %></span> 
+                    <% }) %>
+                </div>
+                <div class="buttons">
+                    <button class="btn-buy">Comprar ahora</button>
+                    <button class="btn-fav">Añadir a favoritos</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="description-section">
+            <h2>Descripción del Juego</h2>
+            <p><%= item.descripcion %></p>
+        </div>
+
+        <div class="reviews-section">
+            <h2>Opiniones de Usuarios</h2>
+            <div class="reviews-grid">
+                <% item.comentarios.forEach(comentario => { %>
+                    <div class="review-card">
+                        <blockquote>
+                            <div class="review-header">
+                                <span class="review-user"><%=comentario.autor %></span>
+                                <span class="review-rating">
+                                    <% for(let i=0; i<(5-comentario.valoracion); i++){ %>☆<% } %><% for(let i=0; i<comentario.valoracion; i++){ %>★<% } %>
+                                </span>
+                            </div>
+                            <p class="review-text"><%=comentario.texto %></p>
+                        </blockquote>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+    <%- include("partials/footer")  %> 
+
+    <script src="/javascripts/app.js"></script>
+</body>
+</html>

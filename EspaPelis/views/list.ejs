@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Listado de Películas</title>
+  <link rel="stylesheet" href="/stylesheets/navbar.css" />
+  <link rel="stylesheet" href="/stylesheets/footer.css" />
+  
+  <link rel='stylesheet' href='/stylesheets/card.css' />
+  <link rel="stylesheet" href="/stylesheets/list.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<script src="/javascripts/navbar.js"></script>
+<script type="module" src="/javascripts/list-page.js"></script>  
+<script src="/javascripts/footer.js"></script>
+<script src="/javascripts/movie-cards.js"></script>
+<script src="/javascripts/logout.js"></script>
+<body data-logged="<%= user ? 'true' : 'false' %>">
+  <%- include('partials/navbar') %>
+
+  <main class="list-main">
+    <section class="list-header">
+      <div class="list-title">
+        <h1>Listado de Películas</h1>
+        <p>Filtra y busca dentro de toda tu colección.</p>
+      </div>
+
+      <div class="list-filters">
+        <div class="search-box">
+          <label for="search-input">Buscar</label>
+          <div class="search-input-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Título, director, categoría..."
+            />
+          </div>
+        </div>
+
+        <div class="filters-row">
+          <div class="filter-group">
+            <label for="format-filter">Formato</label>
+            <select id="format-filter">
+              <option value="">Todos</option>
+              <option value="DVD">DVD</option>
+              <option value="Blu-ray">Blu-ray</option>
+              <option value="4K UHD">4K UHD</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="state-filter">Estado</label>
+            <select id="state-filter">
+              <option value="">Todos</option>
+              <option value="nuevo">Nuevo</option>
+              <option value="bueno">Bueno</option>
+              <option value="malo">Malo</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="category-filter">Categoría</label>
+            <select id="category-filter">
+              <option value="">Todas</option>
+              <option value="Acción">Acción</option>
+              <option value="Drama">Drama</option>
+              <option value="Comedia">Comedia</option>
+              <option value="Terror">Terror</option>
+              <option value="Ciencia ficción">Ciencia ficción</option>
+              <option value="Fantasía">Fantasía</option>
+            </select>
+          </div>
+        </div>
+        <div class="list-actions">
+          <button id="add-movie-btn" class="primary-btn">
+            <i class="fa-solid fa-plus"></i> Añadir película
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="list-results">
+      <div class="results-header">
+        <p id="results-count">Mostrando 0 películas</p>
+      </div>
+      </div>
+      <div class="collection-body"></div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+<div id="add-movie-modal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <button class="modal-close" id="close-add-movie">&times;</button>
+    <h2>Añadir película</h2>
+    <form id="add-movie-form">
+      <div class="form-group">
+        <label for="movie-title">Título</label>
+        <input type="text" id="movie-title" name="title" required />
+      </div>
+
+      <div class="form-group">
+        <label for="movie-year">Año</label>
+        <input type="number" id="movie-year" name="year" required />
+      </div>
+
+      <div class="form-group">
+        <label for="movie-category">Categoría</label>
+        <select id="movie-category" name="category" required>
+          <option value="Acción">Acción</option>
+          <option value="Drama">Drama</option>
+          <option value="Comedia">Comedia</option>
+          <option value="Terror">Terror</option>
+          <option value="Ciencia ficción">Ciencia ficción</option>
+          <option value="Fantasía">Fantasía</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="movie-director">Director</label>
+        <input type="text" id="movie-director" name="director" required />
+      </div>
+
+      <div class="form-group">
+        <label for="movie-description">Descripción</label>
+        <textarea id="movie-description" name="description" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="movie-format">Formato</label>
+        <select id="movie-format" name="format" required>
+          <option value="DVD">DVD</option>
+          <option value="Blu-ray">Blu-ray</option>
+          <option value="4K UHD">4K UHD</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="movie-state">Estado</label>
+        <select id="movie-state" name="state" required>
+          <option value="nuevo">Nuevo</option>
+          <option value="bueno">Bueno</option>
+          <option value="malo">Malo</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="movie-image">URL de la imagen</label>
+        <input type="url" id="movie-image" name="image" required />
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" id="movie-public" name="public" checked />
+          Hacer película pública
+        </label>
+      </div>
+
+      <button type="submit" class="primary-btn">Guardar</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

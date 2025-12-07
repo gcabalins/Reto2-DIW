@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Bilioteca de Videojuegos - Login</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Este sitio web rtata sobre videojuegos" />
+    <meta name="keywords" content="videojuegos,colecciones,games" />
+    <meta name="author" content="Francisco Romero" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="alternate"
+      href="atom.xml"
+      type="application/atom+xml"
+      title="Atom"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="canonical" href="videojuegos.com" />
+
+    <style>
+      h1 { font-size: 3rem; }
+    </style>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+
+    <style>
+      dialog{
+        position:fixed;
+        padding:0;
+        >*{ padding:1rem; }
+      }
+
+      dialog::backdrop {
+        background-color: rgba(218, 76, 76, 0.616);
+        backdrop-filter: blur(3px);
+      }
+    </style>
+    <dialog id="register">
+      <%- include("partials/register") %> 
+    </dialog>
+
+    <%- include("partials/main-menu") %>
+
+    <main>
+      <section class="hero">
+        <div class="inner">
+          <h1>Bienvenido a la Biblioteca de Videojuegos</h1>
+          <p>
+            Explora, colecciona y comparte tus videojuegos favoritos en un solo
+            lugar.
+          </p>
+          <div class="hero-buttons">
+            <% if (!locals.isLogged) { %>
+              <a href="/login" class="btn">Iniciar Sesión</a>                           
+            <% } else { %>
+              <a href="/admin/logout" class="btn">Salir de sesión</a>               
+            <% } %>
+            <a href="#" class="btn btn-secondary" id="btnRegister">Registrarse</a>
+          </div>
+        </div>
+        <video autoplay muted src="/images/2466571-uhd_3840_2160_30fps.mp4"></video>
+        <!--iframe
+          src="https://www.youtube.com/embed/37Jjb9XuQx0?si=5rP4nDMqShiDOtgX&autoplay=1&mute=1&controls=0&showinfo=0"
+        ></iframe-->
+      </section>
+
+      <section class="tienda">
+        <h2>Tienda online</h2>
+        <div class="inner">
+
+          <% locals.productos.forEach(element => { %>
+            <a href="/producto/<%= element.id %>">
+            <div class="card">
+              <img src="<%= element.imagen %>" alt="">
+              <h3><%= element.titulo %></h3>
+              <span class="precio"><%= element.precio %>€</span>
+              <p><%= element.descripcion %></p>
+              <div>
+                <% element.categoria.forEach(cat => { %>
+                  <span class="category"><%= cat %></span>               
+                <% }) %>
+              </div>
+            </div>    
+            </a>     
+          <% }) %>
+
+        </div>  
+      </section>
+
+      <section class="boxed gallery">
+        <h2>Galeria</h2>
+        <div class="inner">
+          <figure class="item">
+            <picture>
+              <source srcset="/images/sonic.png" media="(min-width: 900px)" type="image/png">
+              <img src="/images/supermarioworld.png" alt="" loading="lazy"/>
+            </picture>
+            <figcaption>SuperMarioWorld de SuperNes</figcaption>
+          </figure>
+          <figure class="item">
+            <picture>
+              <source srcset="/images/sonic.png" media="(min-width: 900px)" type="image/png">
+              <img src="/images/supermarioworld.png" alt="" loading="lazy"/>
+            </picture>
+            <figcaption>SuperMarioWorld de SuperNes</figcaption>
+          </figure>
+          <figure class="item">
+            <picture>
+              <source srcset="/images/sonic.png" media="(min-width: 900px)" type="image/png">
+              <img src="/images/supermarioworld.png" alt="" loading="lazy"/>
+            </picture>
+            <figcaption>SuperMarioWorld de SuperNes</figcaption>
+          </figure>
+          <figure class="item">
+            <picture>
+              <source srcset="/images/sonic.png" media="(min-width: 900px)" type="image/png">
+              <img src="/images/supermarioworld.png" alt="" loading="lazy"/>
+            </picture>
+            <figcaption>SuperMarioWorld de SuperNes</figcaption>
+          </figure>
+          <figure class="item">
+            <picture>
+              <source srcset="/images/sonic.png" media="(min-width: 900px)" type="image/png">
+              <img src="/images/supermarioworld.png" alt="" loading="lazy"/>
+            </picture>
+            <figcaption>SuperMarioWorld de SuperNes</figcaption>
+          </figure>
+          <figure class="item">
+            <picture>
+              <source srcset="/images/sonic.png" media="(min-width: 900px)" type="image/png">
+              <img src="/images/supermarioworld.png" alt="" loading="lazy"/>
+            </picture>
+            <figcaption>SuperMarioWorld de SuperNes</figcaption>
+          </figure>
+          <figure class="item">
+            <picture>
+              <source srcset="/images/sonic.png" media="(min-width: 900px)" type="image/png">
+              <img src="/images/supermarioworld.png" alt="" loading="lazy"/>
+            </picture>
+            <figcaption>SuperMarioWorld de SuperNes</figcaption>
+          </figure>
+        </div>
+      </section>    
+
+      <section class="boxed">
+        <h2>Lo más visitado</h2>
+        <div class="slider">
+          <div class="inner">
+            <div class="slide">
+              <img src="/images/supermarioworld.png" alt="" />
+              <p>Super Mario World para Supernintendo</p>
+            </div>
+            <div class="slide">
+              <img src="/images/zelda.jpg" alt="" />
+              <p>The legend of zelda: a link to past</p>
+            </div>
+            <div class="slide">
+              <img src="/images/sonic.png" alt="" />
+              <p>Sonic the Hedgeogh, para Sega MegaDrive</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="boxed cards">
+        <h2>Últimos añadidos</h2>
+        <div class="inner">
+          <div class="flip-card">
+            <div class="inner">
+              <div class="front">
+                <img src="/images/covers/sonic.jpg" alt="Sonic the Hedgehog" />
+              </div>
+              <div class="back">
+                <h4>Sonic the Hedgehog</h4>
+                <p>El famoso erizo azul de Sega que corre a velocidades supersónicas. Un clásico de plataformas que revolucionó los videojuegos en los 90.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card flipped">
+            <div class="inner">
+              <div class="front">
+                <img src="/images/covers/supermarioworld.jpg" alt="Super Mario World" />
+              </div>
+              <div class="back">
+                <h4>Super Mario World</h4>
+                <p>La aventura definitiva de Mario en el mundo de Dinosaur Land. Incluye a Yoshi y niveles secretos que lo convirtieron en uno de los mejores juegos de Super Nintendo.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card flipped">
+            <div class="inner">
+              <div class="front">
+                <img src="/images/covers/zelda.jpg" alt="The Legend of Zelda" />
+              </div>
+              <div class="back">
+                <h4>The Legend of Zelda</h4>
+                <p>La épica aventura de Link para rescatar a la Princesa Zelda. Un RPG de acción que estableció las bases para los juegos de aventura modernos.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card flipped">
+            <div class="inner">
+              <div class="front">
+                <img src="/images/covers/sonic.jpg" alt="Sonic the Hedgehog" />
+              </div>
+              <div class="back">
+                <h4>Sonic the Hedgehog</h4>
+                <p>El famoso erizo azul de Sega que corre a velocidades supersónicas. Un clásico de plataformas que revolucionó los videojuegos en los 90.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card flipped">
+            <div class="inner">
+              <div class="front">
+                <img src="/images/covers/supermarioworld.jpg" alt="Super Mario World" />
+              </div>
+              <div class="back">
+                <h4>Super Mario World</h4>
+                <p>La aventura definitiva de Mario en el mundo de Dinosaur Land. Incluye a Yoshi y niveles secretos que lo convirtieron en uno de los mejores juegos de Super Nintendo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="boxed">
+        <h2>Preguntas comunes</h2>
+        <div class="acordeon">
+          <div class="elemento show">
+            <h3>¿Qué es la Biblioteca de Videojuegos?</h3>
+            <div>
+              Es una plataforma para organizar y descubrir videojuegos. Guarda tu
+              colección, marca tus títulos pendientes y encuentra recomendaciones
+              personalizadas según tus gustos. Además, puedes explorar reseñas de otros usuarios, ver tendencias de juegos populares y descubrir nuevas joyas ocultas que quizá no conocías. Nuestro objetivo es ayudarte a administrar tu biblioteca de la manera más sencilla posible, sin perder de vista las novedades del mundo gamer.
+            </div>
+          </div>
+          <div class="elemento">
+            <h3>Cómo funciona la colección</h3>
+            <div>
+              Crea una cuenta, añade juegos buscándolos por título o plataforma,
+              aplica etiquetas como "completado", "en curso" o "pendiente" y
+              organiza listas de deseos para futuras compras. También puedes ordenar tus juegos por fecha, calificación o plataforma, y añadir comentarios personales en cada título para recordar tus experiencias o notas importantes. El sistema permite sincronizar con servicios externos para importar tu colección fácilmente.
+            </div>
+          </div>
+          <div class="elemento">
+            <h3>Comunidad y reseñas</h3>
+            <div>
+              Comparte reseñas y valoraciones, sigue a otros coleccionistas y
+              participa en debates sobre lanzamientos, ofertas y gemas ocultas del
+              catálogo. Puedes unirte a grupos temáticos sobre tus sagas favoritas,
+              escribir artículos, y recibir notificaciones cuando alguien responde a tus opiniones o recomienda un nuevo juego. El sistema fomenta el respeto y la colaboración entre los miembros de la comunidad.
+            </div>
+          </div>
+          <div class="elemento">
+            <h3>Compatibilidad y plataformas</h3>
+            <div>
+              Soportamos Nintendo Switch, PlayStation 5, Xbox Series, PC y
+              sistemas retro como NES, SNES y Mega Drive. Filtra por plataforma,
+              género, año y más. También puedes encontrar información sobre la retrocompatibilidad de juegos, requisitos técnicos para PC, y noticias acerca de futuras consolas que serán incluidas en la plataforma. Nuestro equipo está dedicado a mantener la base de datos actualizada con las últimas consolas y juegos disponibles.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include("partials/footer") %> 
+
+    <script src="/javascripts/app.js"></script>
+  </body>
+</html>

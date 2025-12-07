@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "El Señor de los Anillos: La Comunidad del Anillo",
     "year": 2001,
     "category": "Fantasía",
@@ -7,9 +8,11 @@
     "description": "Un joven hobbit inicia un viaje épico para destruir un anillo poderoso.",
     "format": "Blu-ray",
     "state": "Nuevo",
-    "image": "https://es.web.img2.acsta.net/c_310_420/medias/nmedia/18/89/67/45/20061512.jpg"
+    "image": "https://es.web.img2.acsta.net/c_310_420/medias/nmedia/18/89/67/45/20061512.jpg",
+    "public": true
   },
   {
+    "id": 2,
     "title": "Interstellar",
     "year": 2014,
     "category": "Ciencia Ficción",
@@ -17,9 +20,11 @@
     "description": "Un grupo de astronautas viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad.",
     "format": "4K UHD",
     "state": "Bueno",
-    "image": "https://www.originalfilmart.com/cdn/shop/products/interstellar_2014_advance_original_film_art_682852f2-23f6-46de-a1db-4029d5b6f0b4_5000x.jpg?v=1574284010"
+    "image": "https://www.originalfilmart.com/cdn/shop/products/interstellar_2014_advance_original_film_art_682852f2-23f6-46de-a1db-4029d5b6f0b4_5000x.jpg?v=1574284010",
+    "public": true
   },
   {
+    "id": 3,
     "title": "Gladiator",
     "year": 2000,
     "category": "Acción / Drama",
@@ -27,37 +32,69 @@
     "description": "Un general romano busca venganza tras la traición del emperador.",
     "format": "DVD",
     "state": "Malo",
-    "image": "https://m.media-amazon.com/images/I/91sdz07c9FL._AC_UF1000,1000_QL80_.jpg"
+    "image": "https://m.media-amazon.com/images/I/91sdz07c9FL._AC_UF1000,1000_QL80_.jpg",
+    "public": true
   },
   {
-  "title": "Inception",
-  "year": 2010,
-  "category": "Ciencia Ficción",
-  "director": "Christopher Nolan",
-  "description": "Un ladrón especializado en infiltrarse en los sueños debe realizar la misión más compleja: implantar una idea.",
-  "format": "Blu-ray",
-  "state": "Nuevo",
-  "image": "https://www.mubis.es/media/covers/1029/1006/origen-inception-portada-original.jpg"
-},
-{
-  "title": "Matrix",
-  "year": 1999,
-  "category": "Acción / Sci-Fi",
-  "director": "The Wachowskis",
-  "description": "Un hacker descubre la verdad oculta tras su realidad y se une a una rebelión contra las máquinas.",
-  "format": "DVD",
-  "state": "Malo",
-  "image": "https://pics.filmaffinity.com/Matrix-155050517-large.jpg"
-},
-{
-  "title": "Pulp Fiction",
-  "year": 1994,
-  "category": "Crimen / Drama",
-  "director": "Quentin Tarantino",
-  "description": "Historias entrelazadas de crimen, humor negro y violencia en Los Ángeles.",
-  "format": "Blu-ray",
-  "state": "Nuevo",
-  "image": "https://www.tuposter.com/pub/media/catalog/product/cache/71d04d62b2100522587d43c930e8a36b/f/i/file_41_67.jpg"
-}
-
+    "id": 4,
+    "title": "Inception",
+    "year": 2010,
+    "category": "Ciencia Ficción",
+    "director": "Christopher Nolan",
+    "description": "Un ladrón especializado en infiltrarse en los sueños debe realizar la misión más compleja: implantar una idea.",
+    "format": "Blu-ray",
+    "state": "Nuevo",
+    "image": "https://www.mubis.es/media/covers/1029/1006/origen-inception-portada-original.jpg",
+    "public": true
+  },
+  {
+    "id": 5,
+    "title": "Matrix",
+    "year": 1999,
+    "category": "Acción / Sci-Fi",
+    "director": "The Wachowskis",
+    "description": "Un hacker descubre la verdad oculta tras su realidad y se une a una rebelión contra las máquinas.",
+    "format": "DVD",
+    "state": "Malo",
+    "image": "https://pics.filmaffinity.com/Matrix-155050517-large.jpg",
+    "public": true
+  },
+  {
+    "id": 6,
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "category": "Crimen / Drama",
+    "director": "Quentin Tarantino",
+    "description": "Historias entrelazadas de crimen, humor negro y violencia en Los Ángeles.",
+    "format": "Blu-ray",
+    "state": "Nuevo",
+    "image": "https://www.tuposter.com/pub/media/catalog/product/cache/71d04d62b2100522587d43c930e8a36b/f/i/file_41_67.jpg",
+    "public": true
+  },
+  {
+    "id": 7,
+    "title": "It 2",
+    "year": 2019,
+    "category": "Acción",
+    "director": "Andrés Muschietti",
+    "description": "Han pasado casi 30 años desde que el \"Club de los Perdedores\", formado por Bill, Berverly, Richie, Ben, Eddie, Mike y Stanley, se enfrentaran al macabro y despiadado Pennywise (Bill Skarsgård).",
+    "format": "DVD",
+    "state": "nuevo",
+    "image": "https://pics.filmaffinity.com/It_Capaitulo_2-844935737-large.jpg",
+    "public": false,
+    "ownerId": 1
+  },
+  {
+    "id": 8,
+    "title": "Uncharted",
+    "year": 2022,
+    "category": "Acción",
+    "director": "Ruben Fleischer",
+    "description": "Nathan Drake inicia una aventura para descubrir los secretos del desafortunado viaje de Marco Polo y el legendario reino de Shambhala en el Himalaya.",
+    "format": "DVD",
+    "state": "nuevo",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHP6ZkVTCljPE56s2qjvNfHAgzArGqpOJYuIj7wgeJHx1zzlV5",
+    "public": true,
+    "ownerId": 5
+  }
 ]

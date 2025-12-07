@@ -8,6 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/login');
 var contactRouter = require('./routes/contact');
+var listRouter = require('./routes/list');
+var detailsRouter = require('./routes/details');
+const session = require('express-session');
+
 
 var app = express();
 
@@ -21,10 +25,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+name: 'sesionId',
+secret: process.env.SESSION_SECRET || '1234',
+resave: false,
+saveUninitialized: false, 
+cookie: {
+httpOnly: true,
+secure: false,
+maxAge: 1000 * 60 * 60 * 24 
+}
+}));
+app.use((req, res, next) => {
+  res.locals.user = req.session.user || null;  // disponible en TODAS las vistas
+  next();
+});
+
+
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/', loginRouter);
 app.use('/', contactRouter);
+app.use('/', listRouter);
+app.use('/', detailsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

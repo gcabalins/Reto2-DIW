@@ -1,0 +1,83 @@
+<nav id="mainmenu">
+  <ul>
+    <li><a href="#">Colección</a></li>
+    <li>
+      <a href="#">Explorar</a>
+      <ul class="submenu">
+        <li>Nintendo Switch</li>
+        <li>XBox</li>
+        <li>Playstation 5</li>
+        <li>Evercade</li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Contacto</a>
+      <div class="submenu megamenu">
+        <h3>Datos de Contacto</h3>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:francisco.romero@email.com"
+            >francisco.romero@email.com</a
+          >
+        </p>
+        <p>
+          <strong>Twitter:</strong>
+          <a href="https://twitter.com/franciscoromero" target="_blank"
+            >@franciscoromero</a
+          >
+        </p>
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/franciscoromero" target="_blank"
+            >github.com/franciscoromero</a
+          >
+        </p>
+      </div>
+    </li>
+  </ul>
+  <a href="/"
+    ><img class="logo" src="/images/videogame-console.png" alt=""
+  /></a>
+  <ul>
+    <li>
+      <a href="#" id="login-menu">Login</a>
+      <div class="offcanvas" id="login-offcanvas">
+        <h2>Iniciar Sesión</h2>
+        <form method="post" action="/admin/login">
+          <div>
+            <label for="login-username">Usuario:</label><br />
+            <input
+              type="text"
+              id="login-username"
+              name="username"
+              required
+            />
+          </div>
+          <div>
+            <label for="login-password">Contraseña:</label><br />
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn">Entrar</button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="cancel-button"
+          >
+            Cancelar
+          </button>
+          <% if (locals.error) { %>
+          <p style="background-color:red; padding:1rem;">
+              <%=locals.error %>
+          </p>
+          <% } %>
+        </form>
+      </div>
+    </li>
+  </ul>
+</nav>
+

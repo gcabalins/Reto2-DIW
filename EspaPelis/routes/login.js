@@ -18,6 +18,14 @@ router.get('/', (req, res) => {
     username: null  // No logueado
   });
 });
+router.post('/logout', (req, res, next) => {
+  req.session.destroy(err => {
+    if (err) return next(err);
+    res.clearCookie('sesionId');
+    res.redirect('/');
+  });
+});
+
 
 
 router.post('/login', (req, res) => {
@@ -70,9 +78,11 @@ router.post('/login', (req, res) => {
   }
 
   // Si todo está bien, redirigir o renderizar página de inicio
-  res.render('index', { 
-    title: 'Inicio', 
-    username: user.name, 
-  });
+  req.session.user = {
+    id: user.id,
+    name: user.name,
+    email: user.email
+  };
+  res.redirect('/');
 });
 module.exports = router;

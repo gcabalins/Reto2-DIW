@@ -1,0 +1,155 @@
+div#container{
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+        "header header"
+        "aside main"
+        "aside footer";
+    
+    aside{ grid-area: aside; }
+    footer{ grid-area:footer; }
+    header{ grid-area: header; }
+    main{ grid-area: main; }
+
+    min-height: 100vh;
+}
+
+aside {
+    background: var(--secondary-background-glass);
+    color: var(--primary-color);
+    width: 20rem;
+    margin: 0;
+
+    h2 {
+        color: var(--primary-color);
+        margin: 1rem;
+        font-size: 1.4rem;
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                a {
+                    display: block;
+                    padding: 1rem;
+                    
+                    color: var(--primary-color);
+                    background: var(--secondary-background-hover);
+                    text-decoration: none;
+                    font-weight: 500;
+                    transition: background 0.2s, color 0.2s;
+
+                    &:hover {
+                        background: var(--primary-color);
+                        color: var(--secondary-background-hover);
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer{
+    text-align: center;
+    background-color: blue;
+}
+
+main{
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+header{
+    background-color: var(--primary-background);
+    padding:1rem;
+}
+
+/*  Tabla con listado de juegos */
+
+#admin table{
+
+    border-collapse: collapse;
+    border:solid 4px ;
+
+
+    caption{
+        font-size:2rem;
+        margin-bottom:1rem;
+    }
+
+    th,td{
+        border:solid 1px;
+        padding:1rem;
+    }
+
+    tbody tr:nth-child(2n+1){
+        background-color:rgba(31, 192, 192, 0.299);
+    }
+    tbody tr:nth-child(2n){
+        background-color:rgba(31, 161, 161, 0.299);
+    }
+
+    tbody tr:hover{
+        background-color: blueviolet;
+        color:white;
+    }
+
+    tbody td:hover{
+        background-color: rgb(168, 149, 186);
+        color:white;
+    }
+
+    .first-col{
+        background-color:aquamarine;
+    }
+
+    .edit-col{
+        width:200px;
+    }
+
+    .btn{
+        text-decoration:none;
+        padding:0.3em 0.7em;
+        border-radius:6px;
+        background-color: var(--primary-background);
+        color:var(--primary-color);
+        display:inline-block;
+        font-size:0.75rem;
+        
+        &.btn-borrar{
+            background-color:red;
+        }
+    }
+
+    form{
+        display:inline-block;
+    }
+
+}
+
+table + div.pagination{
+    display:none;
+    justify-content: center;
+    gap:1rem;
+    button{
+        padding:0.5rem;
+    }
+}
+
+#admin table.page{
+    height: 400px;
+    display:block;
+    overflow-y:scroll;
+
+}
+
+#admin:has(table.page) table + div.pagination{
+    display:flex;
+}

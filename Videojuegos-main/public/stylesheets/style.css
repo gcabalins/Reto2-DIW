@@ -1,0 +1,170 @@
+@import "theme.css";
+@import "normalize.css";
+@import "components.css";
+
+
+body{
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "menu" "main" "footer";
+  
+  >nav{ grid-area: menu; }
+  >footer{ grid-area: footer; }
+  >main{ grid-area: main;}
+}
+
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 0;
+  position:relative;
+  overflow:hidden;
+
+  div.inner{
+    position:absolute;  
+    background: linear-gradient(120deg, #111212 0%, #1d8dffa6 100%);
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    *{
+      max-width: var(--max-width-page);
+    }
+
+  }
+
+  iframe{
+    position:absolute;
+    width:100%;
+    height:calc(110vw / 2);
+    z-index:-1;
+    object-fit:cover;
+  }
+
+  video{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    object-fit:cover;
+    object-position: center;
+  }
+
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:1rem;
+  margin:0 auto;
+  padding:0;
+
+  h2{
+    font-size:3rem;
+  }
+}
+
+section.boxed>*{
+  max-width: var(--max-width-page);
+}
+
+
+section.cards{
+  
+  border-top:solid 10px black;
+  padding-bottom:3rem;
+  margin:3rem auto;
+  rotate: 2deg;
+
+
+  h2{rotate:-2deg;}
+
+  div.inner{
+    rotate:-2deg;
+    display:flex;
+    gap:3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+section.gallery div.inner{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+section.tienda div.inner{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:1rem;
+}
+
+
+body:has(main#login)  {
+  min-height: 100vh;
+
+  main#login{
+    height:100%;
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  
+
+    form{
+      display:flex;
+      flex-direction: column;
+      align-items:center;
+      gap: 1rem;
+      padding:1rem;
+      box-shadow:0 0 2px 3px var(--primary-background);
+      border-radius: 1rem;
+
+      >div{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+    }
+
+    input{
+      padding:0.5rem;
+      border-radius:0.25rem;
+      text-align:center;
+    }
+  
+  }
+
+  
+}

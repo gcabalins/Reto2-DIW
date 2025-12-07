@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+</head>
+<body id="admin">
+
+    <div id="container">
+        <header>
+            <h1>Bienvenido <%= username %> </h1>
+        </header>
+        <main>
+
+            <table class="">
+                <colgroup>
+                    <col class="first-col">
+                    <col>
+                    <col>
+                    <col>
+                    <col class="edit-col">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Titulo</th>
+                        <th>Precio</th>
+                        <th>categoria</th>
+                        <th>Edición</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% productos.forEach(p => { %>
+                        <tr>
+                            <td><%=p.id %></td>
+                            <td><%=p.titulo %></td>
+                            <td><%=p.precio %></td>
+                            <td>
+                                <% p.categoria.forEach(cat => { %>
+                                 <span><%=cat %></span> 
+                                <% }) %>
+                            </td>
+                            <td>
+                                <a href="/producto/<%=p.id %>" class="btn btn-ver">👁 Ver</a>
+                                <!--a href="/admin/producto/<%=p.id %>?operation=delete"" class="btn btn-borrar">🗑 Borrar</a-->
+                                <form method="post" action="/admin/producto/delete">
+                                    <input type="hidden" value="<%=p.id %>" name="id">
+                                    <button class="btn btn-borrar">🗑 Borrar</button>
+                                </form>
+                            </td>
+                        </tr>                         
+                    <% }) %>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">Total: <%=productos.length %> juegos</td>
+                    </tr>
+                </tfoot>
+                <caption>Juegos disponibles</caption>
+            </table>
+            <div class="pagination">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+            </div>
+
+        </main>
+        
+        <%- include("partials/footer") %> 
+
+        <aside>
+            <h2>Menu</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">Opcion1</a></li>
+                    <li><a href="#">Opcion2</a></li>
+                    <li><a href="#">Opcion3</a></li>
+                </ul>
+                <hr>
+                <ul>
+                    <li><a href="/admin/logout">Salir</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+    </div>
+    
+</body>
+</html>

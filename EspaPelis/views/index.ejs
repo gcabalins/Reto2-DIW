@@ -8,14 +8,15 @@
   <link rel='stylesheet' href='/stylesheets/index.css' />
   <link rel='stylesheet' href='/stylesheets/navbar.css' />
   <link rel='stylesheet' href='/stylesheets/footer.css' />
+  <link rel='stylesheet' href='/stylesheets/card.css' />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
-<script src="/javascripts/movie-cards.js"></script>
-<script src="/javascripts/logout.js"></script>
 
 
-<body>
+
+
+<body data-logged="<%= user ? 'true' : 'false' %>">
   <main id="content">
     <%- include('partials/navbar') %>
       <section class="welcome-section">
@@ -27,7 +28,11 @@
           <p>Gestiona tu colección personal de películas en formato físico. <br>Mantén un registro detallado de tus
             DVDs, Blu-rays y más.</p>
           <div class="welcome-buttons">
-            <a href="/collection" class="btn-primary"><i class="fa-solid fa-film"></i>Ver Mi Colección</a>
+            <% if (user) { %>
+            <a href="/list" class="btn-primary"><i class="fa-solid fa-film"></i>Ver Mi Colección</a>
+            <% } else { %>
+            <a href="/signin" class="btn-primary"><i class="fa-solid fa-film"></i>Ver Mi Colección</a>
+            <% } %>
             <a href="/contact" class="btn-secondary">¿Necesitas Ayuda?</a>
 
           </div>
@@ -44,7 +49,9 @@
       </section>
   </main>
   <%- include('partials/footer') %>
-
+<script src="/javascripts/movie-cards.js"></script>
+<script src="/javascripts/logout.js"></script>
+<script type="module" src="/javascripts/index-page.js"></script>
 
 
 

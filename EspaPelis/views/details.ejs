@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title><%= movie.title %> - Detalles</title>
+  <link rel="stylesheet" href="/stylesheets/navbar.css" />
+  <link rel="stylesheet" href="/stylesheets/footer.css" />
+  <link rel="stylesheet" href="/stylesheets/detail.css" />
+  <link rel='stylesheet' href='/stylesheets/card.css' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/navbar') %>
+
+  <main class="detail-main">
+    <a href="/list" class="detail-back-top">
+      <i class="fa-solid fa-arrow-left"></i> Volver a la Colección
+    </a>
+
+    <section class="detail-layout">
+      <div class="detail-poster">
+        <img src="<%= movie.image %>" alt="<%= movie.title %>">
+      </div>
+
+      <div class="detail-content">
+        <header class="detail-header">
+          <h1><%= movie.title %></h1>
+          <div class="detail-chips">
+            <span class="chip">
+              <i class="fa-solid fa-calendar"></i> <%= movie.year %>
+            </span>
+            <span class="chip">
+              <i class="fa-solid fa-film"></i> <%= movie.category %>
+            </span>
+          </div>
+          <p class="detail-director">
+            <i class="fa-regular fa-user"></i>
+            <span>Director: <strong><%= movie.director %></strong></span>
+          </p>
+        </header>
+
+        <section class="detail-card">
+          <h2>Sinopsis</h2>
+          <p><%= movie.description %></p>
+        </section>
+
+        <section class="detail-card">
+          <div class="detail-card-header">
+            <h2>Información de la Copia Física</h2>
+          </div>
+          <div class="detail-copy-grid">
+            <div class="detail-copy-item">
+              <span class="label">Formato</span>
+              <span class="value"><%= movie.format %></span>
+            </div>
+            <div class="detail-copy-item">
+              <span class="label">Estado</span>
+              <span class="value-pill <%= stateClass %>">
+                <%= movie.state %>
+
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <div class="detail-actions">
+          <a href="/list" class="btn-secondary">
+            <i class="fa-solid fa-arrow-left"></i> Volver a la Colección
+          </a>
+          <form action="/movie/<%= movie.id %>/delete" method="post">
+            <button type="submit" class="btn-danger">
+              <i class="fa-solid fa-trash-can"></i> Eliminar de la Colección
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

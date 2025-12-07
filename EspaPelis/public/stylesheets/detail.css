@@ -1,0 +1,227 @@
+:root {
+  --bg-page: #f3f4f6;
+  --card-bg: #ffffff;
+  --border-subtle: #e5e7eb;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --primary: #2b6ced;
+  --danger: #dc2626;
+  --radius-lg: 20px;
+  --shadow-card: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+body {
+  background: var(--bg-page);
+}
+
+/* Layout general */
+
+.detail-main {
+  max-width: 1200px;
+  margin: 32px auto 48px;
+  padding: 0 24px 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text-main);
+}
+
+.detail-back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.detail-layout {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 32px;
+}
+
+/* Poster izquierda */
+
+.detail-poster img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
+
+/* Contenido derecha */
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Cabecera título + chips */
+
+.detail-header h1 {
+  font-size: 2.2rem;
+  margin: 0 0 8px;
+}
+
+.detail-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.detail-director {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Tarjetas internas (sinopsis y copia física) */
+
+.detail-card {
+  background: #f9fafb;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  padding: 18px 20px;
+}
+
+.detail-card h2 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+}
+
+.detail-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Información copia física */
+
+.detail-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.detail-copy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.detail-copy-item {
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  padding: 10px 12px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.detail-copy-item .label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detail-copy-item .value {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.value-pill {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* Colores de estado reutilizando tus clases */
+
+.value-pill.state-new {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.value-pill.state-good {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.value-pill.state-bad {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.value-pill.state-unknown {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+/* Botones inferiores */
+
+.detail-actions {
+  margin-top: 180px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary,
+.btn-danger {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #ffffff;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .detail-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

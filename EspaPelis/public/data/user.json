@@ -3,18 +3,57 @@
     "id": 1,
     "name": "Gabriel",
     "email": "gcabalins@gmail.com",
-    "password": "1234"
+    "password": "1234",
+    "copies": [
+      {
+        "movieId": 1
+      },
+      {
+        "movieId": 4
+      }
+    ]
   },
   {
     "id": 2,
     "name": "Hola buenas",
     "email": "cabalins@gmail.com",
-    "password": "1234"
+    "password": "1234",
+    "copies": [
+      {
+        "movieId": 1
+      },
+      {
+        "movieId": 6
+      }
+    ]
   },
   {
     "id": 3,
     "name": "Francisco",
     "email": "francisco@gmail.com",
+    "password": "1234",
+    "copies": [
+      {
+        "movieId": 2
+      },
+      {
+        "movieId": 3
+      },
+      {
+        "movieId": 5
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Piscasso",
+    "email": "gabriel.s586464@cesurformacion.com",
+    "password": "1234"
+  },
+  {
+    "id": 5,
+    "name": "Piscasso",
+    "email": "jlcabsal@gmail.com",
     "password": "1234"
   }
 ]

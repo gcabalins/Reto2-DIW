@@ -5,15 +5,24 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+html{
+  min-height: 100%;
+  position: relative;
+}
 
 body {
     background: #f4f4f4;
     color: #222;
+    margin: 0;
 }
 .footer {
   background-color: #2B6CED;
   color: white;
   padding: 20px 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
 }
 
 .footer-container {
